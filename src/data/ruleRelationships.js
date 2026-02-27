@@ -54,13 +54,6 @@ export const ruleNodes = [
     path: '.claude/rules/design-system.md',
     description: '디자인 시스템 원칙, 토큰 사용, 스타일링 규칙',
   },
-  {
-    id: 'project-directory',
-    name: 'project-directory.md',
-    priority: 'MUST',
-    path: '.claude/rules/project-directory.md',
-    description: '디렉토리 구조, 텍소노미 기반 컴포넌트 배치',
-  },
   // SHOULD
   {
     id: 'easy-refactoring',
@@ -75,14 +68,6 @@ export const ruleNodes = [
     priority: 'SHOULD',
     path: '.claude/rules/mui-theme.md',
     description: 'MUI 커스텀 테마 설정 (Typography, Color, Elevation)',
-  },
-  // Reference
-  {
-    id: 'components',
-    name: 'components.md',
-    priority: 'Reference',
-    path: '.claude/rules/components.md',
-    description: '기존 컴포넌트 목록 (텍소노미 기반 분류)',
   },
   // Skill
   {
@@ -121,6 +106,13 @@ export const ruleNodes = [
     path: '.claude/skills/component-work/resources/taxonomy-index.md',
     description: '텍소노미 빠른 참조 인덱스',
   },
+  {
+    id: 'project-directory',
+    name: 'project-directory.md',
+    priority: 'Skill Resource',
+    path: '.claude/skills/component-work/resources/project-directory.md',
+    description: '디렉토리 구조, 배치 가이드, 컴포넌트 추가 절차',
+  },
 ];
 
 export const edgeTypes = {
@@ -137,10 +129,8 @@ export const ruleEdges = [
   { from: 'claude-md', to: 'mui-grid-usage', type: 'loads' },
   { from: 'claude-md', to: 'code-convention', type: 'loads' },
   { from: 'claude-md', to: 'design-system', type: 'loads' },
-  { from: 'claude-md', to: 'project-directory', type: 'loads' },
   { from: 'claude-md', to: 'easy-refactoring', type: 'loads' },
   { from: 'claude-md', to: 'mui-theme', type: 'loads' },
-  { from: 'claude-md', to: 'components', type: 'loads' },
 
   // CLAUDE.md → Skill (의도 기반 활성화)
   { from: 'claude-md', to: 'component-work', type: 'activates', note: '컴포넌트 작업 시' },
@@ -150,44 +140,36 @@ export const ruleEdges = [
   { from: 'component-work', to: 'taxonomy', type: 'resources', note: '카테고리 상세 필요 시' },
   { from: 'component-work', to: 'storybook-writing', type: 'resources', note: '스토리 작성/수정 시' },
   { from: 'component-work', to: 'interactive-component-principles', type: 'resources', note: '#11~#15 카테고리 작업 시' },
-
-  // rules 간 참조
-  { from: 'project-directory', to: 'taxonomy', type: 'references', note: '분류 기준' },
-  { from: 'components', to: 'taxonomy', type: 'references', note: '카테고리 원형 참조' },
-  { from: 'components', to: 'taxonomy-index', type: 'references', note: '빠른 인덱스 참조' },
-  { from: 'design-system', to: 'components', type: 'references', note: '기존 컴포넌트 재활용 확인' },
-
-  // Skill → rules 참조
-  { from: 'component-work', to: 'components', type: 'references', note: '기존 컴포넌트 확인 (이미 로드됨)' },
+  { from: 'component-work', to: 'project-directory', type: 'resources', note: '생성 시 위치 결정' },
 ];
 
 export const conditionMatrix = [
   {
     task: '컴포넌트 생성',
-    rules: ['design-system', 'project-directory', 'code-convention', 'components'],
+    rules: ['design-system', 'code-convention'],
     skill: 'component-work',
-    skillResources: ['taxonomy-index', 'storybook-writing'],
+    skillResources: ['taxonomy-index', 'project-directory', 'storybook-writing'],
   },
   {
     task: '컴포넌트 수정',
-    rules: ['design-system', 'code-convention', 'components'],
+    rules: ['design-system', 'code-convention'],
     skill: 'component-work',
     skillResources: ['storybook-writing'],
   },
   {
     task: '컴포넌트 삭제',
-    rules: ['components'],
+    rules: [],
     skill: 'component-work',
   },
   {
     task: '인터랙티브 컴포넌트',
-    rules: ['design-system', 'project-directory', 'code-convention', 'components'],
+    rules: ['design-system', 'code-convention'],
     skill: 'component-work',
-    skillResources: ['taxonomy-index', 'interactive-component-principles', 'storybook-writing'],
+    skillResources: ['taxonomy-index', 'project-directory', 'interactive-component-principles', 'storybook-writing'],
   },
   {
     task: '스토리 작성/수정',
-    rules: ['project-directory'],
+    rules: [],
     skill: 'component-work',
     skillResources: ['storybook-writing'],
   },

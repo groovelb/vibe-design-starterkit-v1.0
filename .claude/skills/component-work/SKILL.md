@@ -30,28 +30,25 @@
 2. **텍소노미 참조**: `resources/taxonomy-index.md` Read → 해당 카테고리와 원형 후보 제시
    - "이 카테고리에 이런 원형들이 있습니다: ..."
    - 텍소노미는 절대 기준이 아닌 맥락 안내 도구
-3. **기존 컴포넌트 확인**: `components.md` (rules에서 이미 로드됨)
+3. **기존 컴포넌트 확인**: 해당 카테고리 디렉토리의 파일 목록으로 직접 확인
    - 기존 것으로 커버 가능하면 재활용, 아니면 신규 생성
 4. **구현**:
-   - `project-directory.md`에 따라 위치 결정
+   - `resources/project-directory.md` Read → 위치 결정
    - `resources/storybook-writing.md` Read → 스토리 작성
    - 인터랙티브 감지 시 → `resources/interactive-principles.md` Read
-   - `components.md` 업데이트 (MUST)
    - `src/data/ruleRelationships.js` 동기화 (해당 시)
 
 ### 수정 워크플로우
 
-1. 대상 컴포넌트 파악 (`components.md`는 이미 로드됨)
+1. 대상 컴포넌트 파악 (해당 디렉토리에서 직접 확인)
 2. 현재 동작/코드 확인
 3. 수정 구현 (기존 동작 유지)
 4. `resources/storybook-writing.md` Read → 스토리 동기화
-5. `components.md` 설명 업데이트 (기능 변경 시)
 
 ### 삭제 워크플로우
 
 1. 의존성 확인 (해당 컴포넌트를 사용하는 곳)
 2. 컴포넌트 파일 + 스토리 파일 삭제
-3. `components.md`에서 항목 제거
 
 ### 스토리 워크플로우
 
@@ -67,6 +64,7 @@
 | `taxonomy-v0.4.md` | 전체 분류체계 상세 | 카테고리 상세 정보 필요 시 |
 | `taxonomy-index.md` | 빠른 인덱스 | 생성 시 카테고리 후보 파악 (우선) |
 | `storybook-writing.md` | 스토리 작성 규칙 | 스토리 작성/수정 시 |
+| `project-directory.md` | 디렉토리 구조, 배치 가이드 | 생성 시 위치 결정 |
 | `interactive-principles.md` | 인터랙티브 원칙 | 아래 감지 조건 해당 시 |
 
 ---

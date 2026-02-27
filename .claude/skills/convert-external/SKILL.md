@@ -36,7 +36,7 @@
 ### 2단계: 텍소노미 분류
 
 1. `component-work`의 `resources/taxonomy-index.md` Read → 카테고리 후보 제시
-2. `components.md` (rules에서 이미 로드됨) → 기존 컴포넌트와 중복/유사 확인
+2. 해당 카테고리 디렉토리의 파일 목록으로 기존 컴포넌트와 중복/유사 확인
 3. 사용자에게 카테고리 후보 제시 → 확인 후 결정
 
 ```
@@ -75,12 +75,11 @@
      - single quotes, `{ value }` JSX 스페이싱
 
 2. **위치 결정**
-   - `project-directory.md`에 따라 텍소노미 카테고리 디렉토리에 배치
+   - `component-work`의 `resources/project-directory.md` Read → 텍소노미 카테고리 디렉토리에 배치
 
 3. **스토리 작성**
    - `component-work`의 `resources/storybook-writing.md` Read → 스토리 규칙 확인
    - Placeholder 시스템 사용 (하드코딩 이미지/데모 금지)
-   - `project-directory.md`의 Storybook 카테고리 매핑에 따라 title 설정
 
 4. **인터랙티브 감지**
    - 아래 조건 해당 시 → `component-work`의 `resources/interactive-principles.md` Read
@@ -89,12 +88,9 @@
      - 텍소노미 #11~#15 카테고리
      - CSS 애니메이션을 넘어서는 인터랙션
 
-### 5단계: 등록
+### 5단계: 정리
 
-1. `components.md` 업데이트 (MUST)
-   - 해당 카테고리 섹션에 컴포넌트 추가
-   - 형식: `- ComponentName: 한줄 설명 (\`components/category/ComponentName.jsx\`)`
-2. 사용자 확인 후 `src/externalComponents/` 원본 삭제
+1. 사용자 확인 후 `src/externalComponents/` 원본 삭제
 
 ---
 
