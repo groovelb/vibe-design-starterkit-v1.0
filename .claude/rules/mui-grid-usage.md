@@ -13,5 +13,6 @@ import Grid from '@mui/material/Grid';   // 정확함! 이것만 사용!
 ```
 
 **중요**: MUI v7에서는 `Grid2`가 아닌 `Grid`를 직접 import해야 합니다.
+**Props**: `<Grid container spacing={2}>`, `<Grid size={{ xs: 6, md: 8 }}>` 형태로 사용.
 
 > 상세 사용 예시: `.claude/skills/component-work/resources/mui-grid-example.md` 참조
