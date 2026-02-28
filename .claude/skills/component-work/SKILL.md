@@ -27,13 +27,12 @@
 ### 생성 워크플로우
 
 1. **의도 구체화**: 사용자가 원하는 컴포넌트 유형 파악
-2. **텍소노미 참조**: `resources/taxonomy-index.md` Read → 해당 카테고리와 원형 후보 제시
+2. **카테고리 확인**: `resources/project-directory.md` Read → 배치 가이드의 원형 목록으로 카테고리와 후보 제시
    - "이 카테고리에 이런 원형들이 있습니다: ..."
-   - 텍소노미는 절대 기준이 아닌 맥락 안내 도구
+   - 원형 목록은 절대 기준이 아닌 맥락 안내 도구
 3. **기존 컴포넌트 확인**: 해당 카테고리 디렉토리의 파일 목록으로 직접 확인
    - 기존 것으로 커버 가능하면 재활용, 아니면 신규 생성
 4. **구현**:
-   - `resources/project-directory.md` Read → 위치 결정
    - `resources/storybook-writing.md` Read → 스토리 작성
    - 인터랙티브 감지 시 → `resources/interactive-principles.md` Read
    - `src/data/ruleRelationships.js` 동기화 (해당 시)
@@ -61,25 +60,16 @@
 
 | 파일 | 용도 | 언제 Read |
 |------|------|----------|
-| `taxonomy-v0.4.md` | 전체 분류체계 상세 | 카테고리 상세 정보 필요 시 |
-| `taxonomy-index.md` | 빠른 인덱스 | 생성 시 카테고리 후보 파악 (우선) |
+| `project-directory.md` | 디렉토리 구조, 카테고리 원형, 배치 가이드 | 생성 시 (우선) |
 | `storybook-writing.md` | 스토리 작성 규칙 | 스토리 작성/수정 시 |
-| `project-directory.md` | 디렉토리 구조, 배치 가이드 | 생성 시 위치 결정 |
 | `interactive-principles.md` | 인터랙티브 원칙 | 아래 감지 조건 해당 시 |
 
 ---
-
-## 텍소노미 활용 원칙
-
-- 텍소노미는 100% 절대 기준이 아님
-- "골라라"가 아니라 **"만들려는 게 이런 맥락이 맞나요?"**
-- 사용자의 불확실한 목적을 체계적으로 구체화
-- 텍소노미에 없는 패턴도 가장 가까운 카테고리에 배치 가능
 
 ## 인터랙티브 감지 조건
 
 아래 중 하나라도 해당하면 `resources/interactive-principles.md` Read 필수:
 - Framer Motion, GSAP 등 애니메이션 라이브러리 사용
 - 스크롤 기반 인터랙션 구현
-- 텍소노미 #11~#15 카테고리 작업
+- #11~#15 카테고리 작업
 - CSS 애니메이션을 넘어서는 인터랙션

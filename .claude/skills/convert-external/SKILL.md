@@ -33,9 +33,9 @@
 - 변환 난이도: 복잡 (외부 라이브러리 + 스타일 전환)
 ```
 
-### 2단계: 텍소노미 분류
+### 2단계: 카테고리 분류
 
-1. `component-work`의 `resources/taxonomy-index.md` Read → 카테고리 후보 제시
+1. `component-work`의 `resources/project-directory.md` Read → 배치 가이드의 원형 목록으로 카테고리 후보 제시
 2. 해당 카테고리 디렉토리의 파일 목록으로 기존 컴포넌트와 중복/유사 확인
 3. 사용자에게 카테고리 후보 제시 → 확인 후 결정
 
@@ -104,7 +104,7 @@
 
 | 파일 | 위치 | 언제 Read |
 |------|------|----------|
-| `taxonomy-index.md` | `component-work/resources/` | 2단계 |
+| `project-directory.md` | `component-work/resources/` | 2단계 |
 | `storybook-writing.md` | `component-work/resources/` | 4단계 |
 | `interactive-principles.md` | `component-work/resources/` | 4단계 (인터랙티브 감지 시) |
 
