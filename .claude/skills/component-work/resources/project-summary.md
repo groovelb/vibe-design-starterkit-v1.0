@@ -1,4 +1,4 @@
-# Project Summary (CRITICAL)
+# Project Summary
 
 ## 프로젝트 개요
 

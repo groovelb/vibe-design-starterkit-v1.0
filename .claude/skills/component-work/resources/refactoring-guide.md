@@ -1,6 +1,7 @@
-# Easy Refactoring Guide (SHOULD)
+# Refactoring Guide
 
-리팩토링 작업 시 준수해야 할 가이드
+> 리팩토링 작업 시 준수해야 할 가이드.
+> component-work 스킬의 리팩토링 워크플로우에서 참조한다.
 
 ## 핵심 원칙
 

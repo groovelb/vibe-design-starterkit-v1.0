@@ -2,26 +2,14 @@
 
 ## 규칙 원본
 
-### MUST
+### MUST (매 대화 자동 로드)
 @.claude/rules/code-convention.md
 @.claude/rules/design-system.md
-
-### SHOULD
-@.claude/rules/project-summary.md
 @.claude/rules/mui-grid-usage.md
-@.claude/rules/easy-refactoring.md
-@.claude/rules/mui-theme.md
+@.claude/rules/directory-structure.md
 
-## Workflow
-
-- 디자인 관련 작업 → `/frontend-design` Skill 사용
-- 컴포넌트 작업 → `component-work` Skill이 워크플로우 담당
-- 리팩토링 → easy-refactoring.md 참조, 기존 스토리 통과 확인
-- 룰 수정 먼저 제안 → `src/data/ruleRelationships.js` 동기화 필수
-
-## 제약
-
-- `run_in_background: true` 사용 금지
-- 병렬 실행은 하나의 메시지에서 여러 Task 동시 호출
-- 빌드 검증은 사용자 요청 시만
-- 규칙 충돌 시 사용자에게 알리고 승인 대기
+### Skill Resources (자동 로드되지 않음, Skill 활성화 시 on-demand Read)
+- `.claude/skills/component-work/resources/components.md` — 기존 컴포넌트 목록
+- `.claude/skills/component-work/resources/mui-theme.md` — MUI 테마 설정
+- `.claude/skills/component-work/resources/refactoring-guide.md` — 리팩토링 가이드
+- `.claude/skills/component-work/resources/project-summary.md` — 프로젝트 개요
